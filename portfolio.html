@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | AVNEI YAQAR - Where Quality Meets Excellence</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-green: #046307;
+            --dark-green: #034a05;
+            --light-green: #e8f5e9;
+            --gold-yellow: #ffd700;
+            --accent-red: #c1272d;
+            --dark-red: #8a1c1c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--emerald-green) !important;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold-yellow);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-yellow) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            border-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--emerald-green);
+        }
+
+        .page-header {
+            position: relative;
+            color: white;
+            padding: 120px 0;
+            background: linear-gradient(rgba(4, 99, 7, 0.8), rgba(4, 99, 7, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .breadcrumb-item a {
+            color: var(--gold-yellow);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: white;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--emerald-green);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--gold-yellow);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .portfolio-section {
+            padding: 100px 0;
+        }
+
+        .portfolio-filter {
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--emerald-green);
+            color: var(--emerald-green);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--emerald-green);
+            color: white;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(4, 99, 7, 0.9), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            background-color: var(--gold-yellow);
+            color: var(--emerald-green);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+            position: relative;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--emerald-green);
+        }
+
+        .testimonial-role {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .quote-icon {
+            color: var(--gold-yellow);
+            opacity: 0.2;
+            font-size: 4rem;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .stats-section {
+            padding: 80px 0;
+            background-color: var(--emerald-green);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-yellow);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--gold-yellow);
+        }
+
+        .footer-links h5 {
+            color: var(--gold-yellow);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-yellow);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-yellow);
+            color: var(--emerald-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .modal-header {
+            background-color: var(--emerald-green);
+            color: white;
+            border-bottom: none;
+        }
+
+        .modal-body img {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .modal-body h5 {
+            color: var(--emerald-green);
+            margin-bottom: 15px;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .portfolio-img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .portfolio-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AVNEI<span>YAQAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline ms-lg-3">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Our Portfolio</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Our Work</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Showcasing excellence across all our
+                service areas</p>
+
+            <div class="portfolio-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="groceries">Groceries</button>
+                <button class="filter-btn" data-filter="catering">Catering</button>
+                <button class="filter-btn" data-filter="gifts">Corporate Gifts</button>
+                <button class="filter-btn" data-filter="it">IT Solutions</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+            </div>
+
+            <div class="row">
+                <!-- Groceries Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="groceries" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Premium Groceries Supply">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Groceries</span>
+                        <h4 class="portfolio-title">Premium Groceries Supply</h4>
+                        <p>Provided premium imported groceries to high-end retail stores across Zimbabwe.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal1">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Catering Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="catering" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Corporate Event Catering">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Catering</span>
+                        <h4 class="portfolio-title">Corporate Event Catering</h4>
+                        <p>Catered for 200+ guests at a multinational company's annual conference.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal2">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Gifts Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="gifts" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Executive Gift Hampers">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Corporate Gifts</span>
+                        <h4 class="portfolio-title">Executive Gift Hampers</h4>
+                        <p>Custom luxury gift hampers for a banking group's top clients.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal3">View Details</button>
+                    </div>
+                </div>
+
+                <!-- IT Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="it" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Office IT Setup">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">IT Solutions</span>
+                        <h4 class="portfolio-title">Office IT Setup</h4>
+                        <p>Complete IT infrastructure for a new law firm office in Harare.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal4">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Construction Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="construction" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Residential Fencing">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Construction</span>
+                        <h4 class="portfolio-title">Residential Fencing</h4>
+                        <p>Security fencing for a high-end residential community in Borrowdale.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal5">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Groceries Project 2 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="groceries" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        class="portfolio-img" alt="Bulk Grocery Supply">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Groceries</span>
+                        <h4 class="portfolio-title">Bulk Grocery Supply</h4>
+                        <p>Monthly bulk supply of provisions to boarding schools in the region.</p>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#portfolioModal6">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Client Testimonials</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">What our clients say about our work</p>
+
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">AVNEI YAQAR's catering service made our corporate event
+                            unforgettable. The food was exquisite and their attention to detail was impressive.</p>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">CEO, Tech Innovations Ltd.</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">The construction materials we sourced from AVNEI YAQAR were of
+                            exceptional quality. Their knowledgeable staff helped us select exactly what we needed.</p>
+                        <div class="testimonial-author">Michael Chen</div>
+                        <div class="testimonial-role">Project Manager, Urban Builders</div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="testimonial-text">Our corporate clients were thrilled with the premium gift baskets
+                            from AVNEI YAQAR. They helped us strengthen important business relationships.</p>
+                        <div class="testimonial-author">Amina Bello</div>
+                        <div class="testimonial-role">Marketing Director, Global Finance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Corporate Clients</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Industry Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center py-5" data-aos="fade-up">
+            <h2 class="mb-4">Ready to Start Your Project?</h2>
+            <p class="lead mb-5">Contact us today to discuss how we can bring excellence to your next project.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg me-3">Get a Quote</a>
+            <a href="services.html" class="btn btn-outline-dark btn-lg">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal1Label">Premium Groceries Supply</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Premium Groceries Supply">
+                    <h5>Project Details</h5>
+                    <p>We partnered with a chain of high-end retail stores across Zimbabwe to supply premium imported
+                        groceries. Our team carefully curated a selection of international products to meet the demands
+                        of discerning customers.</p>
+                    <ul>
+                        <li>Supplied 15 retail locations nationwide</li>
+                        <li>Over 200 premium imported products</li>
+                        <li>Monthly replenishment system</li>
+                        <li>Custom packaging solutions</li>
+                        <li>Ongoing quality control</li>
+                    </ul>
+                    <p><strong>Client:</strong> Premium Retail Chain</p>
+                    <p><strong>Duration:</strong> Ongoing since 2018</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal2Label">Corporate Event Catering</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Corporate Event Catering">
+                    <h5>Project Details</h5>
+                    <p>We catered the annual conference for a multinational corporation with over 200 executives in
+                        attendance. Our team designed a custom menu that accommodated various dietary restrictions while
+                        maintaining gourmet quality.</p>
+                    <ul>
+                        <li>Three-day conference catering</li>
+                        <li>Custom menu with international cuisine options</li>
+                        <li>Kosher, halal, and vegetarian options</li>
+                        <li>On-site food preparation</li>
+                        <li>Premium beverage service</li>
+                    </ul>
+                    <p><strong>Client:</strong> Fortune 500 Technology Company</p>
+                    <p><strong>Date:</strong> November 2022</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal3Label">Executive Gift Hampers</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Executive Gift Hampers">
+                    <h5>Project Details</h5>
+                    <p>Created custom luxury gift hampers for a banking group to present to their top clients during the
+                        holiday season. Each hamper was personalized with the recipient's name and included premium
+                        local and imported products.</p>
+                    <ul>
+                        <li>150 custom gift hampers</li>
+                        <li>Premium packaging with company branding</li>
+                        <li>Personalized notes from the CEO</li>
+                        <li>Nationwide delivery coordination</li>
+                        <li>Follow-up thank you cards</li>
+                    </ul>
+                    <p><strong>Client:</strong> Major Banking Group</p>
+                    <p><strong>Date:</strong> December 2022</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal4Label">Office IT Setup</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Office IT Setup">
+                    <h5>Project Details</h5>
+                    <p>Provided complete IT infrastructure for a new law firm office in Harare, including workstations,
+                        networking equipment, and printers. Our team handled everything from equipment selection to
+                        installation and configuration.</p>
+                    <ul>
+                        <li>15 high-performance workstations</li>
+                        <li>Network infrastructure setup</li>
+                        <li>High-volume printing solutions</li>
+                        <li>Data security systems</li>
+                        <li>Ongoing maintenance contract</li>
+                    </ul>
+                    <p><strong>Client:</strong> Law Firm</p>
+                    <p><strong>Date:</strong> March 2023</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal5Label">Residential Fencing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Residential Fencing">
+                    <h5>Project Details</h5>
+                    <p>Installed premium security fencing for a high-end residential community in Borrowdale. Our
+                        solution combined security with aesthetic appeal to maintain the neighborhood's upscale
+                        appearance.</p>
+                    <ul>
+                        <li>500 meters of perimeter fencing</li>
+                        <li>Decorative wrought iron elements</li>
+                        <li>Automated gate systems</li>
+                        <li>Landscaping integration</li>
+                        <li>Ongoing maintenance agreement</li>
+                    </ul>
+                    <p><strong>Client:</strong> Residential Community Association</p>
+                    <p><strong>Date:</strong> January 2023</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6Label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModal6Label">Bulk Grocery Supply</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Bulk Grocery Supply">
+                    <h5>Project Details</h5>
+                    <p>Provided monthly bulk supply of provisions to several boarding schools in the region. Our service
+                        ensured consistent quality and reliable delivery schedules to meet the schools' operational
+                        needs.</p>
+                    <ul>
+                        <li>5 boarding school clients</li>
+                        <li>Customized product lists for each institution</li>
+                        <li>Monthly delivery schedule</li>
+                        <li>Bulk pricing advantages</li>
+                        <li>Emergency order availability</li>
+                    </ul>
+                    <p><strong>Client:</strong> Group of Boarding Schools</p>
+                    <p><strong>Duration:</strong> Ongoing since 2020</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">AVNEI<span>YAQAR</span></div>
+                    <p>Where Quality Meets Excellence in every product and service we offer.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="services.html">Groceries</a></li>
+                            <li><a href="services.html">Catering</a></li>
+                            <li><a href="services.html">Corporate Gifts</a></li>
+                            <li><a href="services.html">IT Equipment</a></li>
+                            <li><a href="services.html">Construction</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Harare: 144 Hoveton Close</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bulawayo: 70 Woodville Park</li>
+                            <li><i class="fas fa-phone me-2"></i> +263 242 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@avneiyaqar.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM - 5PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 AVNEI YAQAR. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Portfolio filtering
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
