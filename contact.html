@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | AVNEI YAQAR - Where Quality Meets Excellence</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-green: #046307;
+            --dark-green: #034a05;
+            --light-green: #e8f5e9;
+            --gold-yellow: #ffd700;
+            --accent-red: #c1272d;
+            --dark-red: #8a1c1c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--emerald-green) !important;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold-yellow);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-yellow) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            border-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--emerald-green);
+        }
+
+        .page-header {
+            position: relative;
+            color: white;
+            padding: 120px 0;
+            background: linear-gradient(rgba(4, 99, 7, 0.8), rgba(4, 99, 7, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .breadcrumb-item a {
+            color: var(--gold-yellow);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: white;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--emerald-green);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--gold-yellow);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .contact-section {
+            padding: 100px 0;
+        }
+
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 50px 30px;
+            border-radius: 10px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-method {
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--emerald-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-title {
+            font-weight: 600;
+            color: var(--emerald-green);
+            margin-bottom: 15px;
+        }
+
+        .contact-text {
+            color: #555;
+        }
+
+        .contact-text a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent-red);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-control {
+            height: 50px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--emerald-green);
+        }
+
+        textarea.form-control {
+            height: auto;
+            min-height: 150px;
+        }
+
+        .branches-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .branch-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .branch-title {
+            color: var(--emerald-green);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .branch-icon {
+            font-size: 1.5rem;
+            color: var(--gold-yellow);
+            margin-right: 15px;
+        }
+
+        .branch-info {
+            margin-bottom: 15px;
+        }
+
+        .branch-info i {
+            color: var(--accent-red);
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .map-container {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .faq-section {
+            padding: 100px 0;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            color: var(--emerald-green);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light-green);
+            color: var(--emerald-green);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--gold-yellow);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--gold-yellow);
+        }
+
+        .footer-links h5 {
+            color: var(--gold-yellow);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-yellow);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-yellow);
+            color: var(--emerald-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .contact-info {
+                margin-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AVNEI<span>YAQAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline ms-lg-3">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Contact Us</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="contact-info">
+                        <h2 class="section-title">Get in Touch</h2>
+                        <p class="mb-5">We'd love to hear from you! Reach out through any of these methods:</p>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="contact-title">Our Locations</h4>
+                            <div class="contact-text">
+                                <p><strong>Harare Branch:</strong><br>144 Hoveton Close, The Grange, Harare</p>
+                                <p><strong>Bulawayo Branch:</strong><br>70 Woodville Park, Bulawayo</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h4 class="contact-title">Call Us</h4>
+                            <div class="contact-text">
+                                <p><a href="tel:+2632421234567">+263 242 123 4567</a> (Harare)</p>
+                                <p><a href="tel:+2632921234567">+263 292 123 4567</a> (Bulawayo)</p>
+                                <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4 class="contact-title">Email Us</h4>
+                            <div class="contact-text">
+                                <p><a href="mailto:info@avneiyaqar.com">info@avneiyaqar.com</a></p>
+                                <p><a href="mailto:sales@avneiyaqar.com">sales@avneiyaqar.com</a></p>
+                                <p><a href="mailto:support@avneiyaqar.com">support@avneiyaqar.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <h2 class="section-title">Send Us a Message</h2>
+                        <p class="mb-4">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control" id="service" required>
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option value="groceries">Groceries and Provisions</option>
+                                    <option value="catering">Catering Services</option>
+                                    <option value="gifts">Corporate Gifts</option>
+                                    <option value="it">IT Equipment</option>
+                                    <option value="construction">Construction Materials</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message"
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="branches-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Our Branches</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Visit us at one of our convenient
+                locations</p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="branch-card">
+                        <h3 class="branch-title"><i class="fas fa-map-marker-alt branch-icon"></i> Harare Branch</h3>
+                        <div class="branch-info">
+                            <p><i class="fas fa-map-marker-alt"></i> 144 Hoveton Close, The Grange, Harare</p>
+                            <p><i class="fas fa-phone"></i> +263 242 123 4567</p>
+                            <p><i class="fas fa-envelope"></i> harare@avneiyaqar.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                        </div>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.415112873456!2d31.05607231542557!3d-17.7823728878838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQ2JzU2LjUiUyAzMcKwMDMnMjYuOSJF!5e0!3m2!1sen!2szw!4v1620000000000!5m2!1sen!2szw"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="branch-card">
+                        <h3 class="branch-title"><i class="fas fa-map-marker-alt branch-icon"></i> Bulawayo Branch</h3>
+                        <div class="branch-info">
+                            <p><i class="fas fa-map-marker-alt"></i> 70 Woodville Park, Bulawayo</p>
+                            <p><i class="fas fa-phone"></i> +263 292 123 4567</p>
+                            <p><i class="fas fa-envelope"></i> bulawayo@avneiyaqar.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                        </div>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9876543210987!2d28.56789131542557!3d-20.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDA3JzI0LjQiUyAyOMKwMzQnMTYuOCJF!5e0!3m2!1sen!2szw!4v1620000000000!5m2!1sen!2szw"
+                                allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Quick answers to common questions</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What are your business hours?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our branches are open Monday to Friday from 8:00 AM to 5:00 PM, and Saturdays from
+                                    9:00 AM to 1:00 PM. We are closed on Sundays and public holidays. For urgent matters
+                                    outside business hours, please call our emergency contact number.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How quickly can I expect a response to my inquiry?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We strive to respond to all inquiries within 24 hours during business days. For
+                                    urgent matters, please call our offices directly. Email responses may take slightly
+                                    longer during weekends and holidays.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do you offer delivery services?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer delivery services for most of our products. Delivery availability and
+                                    fees depend on the product type, order size, and delivery location. Our team can
+                                    provide specific delivery information when you place your order.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Can I schedule a consultation for catering or construction services?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We encourage consultations for our catering and construction services to
+                                    ensure we fully understand your needs. Please use our contact form to request a
+                                    consultation or call our offices to schedule an appointment with our specialists.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">AVNEI<span>YAQAR</span></div>
+                    <p>Where Quality Meets Excellence in every product and service we offer.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="services.html">Groceries</a></li>
+                            <li><a href="services.html">Catering</a></li>
+                            <li><a href="services.html">Corporate Gifts</a></li>
+                            <li><a href="services.html">IT Equipment</a></li>
+                            <li><a href="services.html">Construction</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Harare: 144 Hoveton Close</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bulawayo: 70 Woodville Park</li>
+                            <li><i class="fas fa-phone me-2"></i> +263 242 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@avneiyaqar.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM - 5PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 AVNEI YAQAR. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Here you would typically send the form data to your server
+            // For demonstration, we'll just show an alert
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
