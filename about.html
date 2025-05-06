@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | AVNEI YAQAR - Where Quality Meets Excellence</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-green: #046307;
+            --dark-green: #034a05;
+            --light-green: #e8f5e9;
+            --gold-yellow: #ffd700;
+            --accent-red: #c1272d;
+            --dark-red: #8a1c1c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--emerald-green) !important;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold-yellow);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-yellow) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            border-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--emerald-green);
+        }
+
+        .page-header {
+            position: relative;
+            color: white;
+            padding: 120px 0;
+            background: linear-gradient(rgba(4, 99, 7, 0.8), rgba(4, 99, 7, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .breadcrumb-item a {
+            color: var(--gold-yellow);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: white;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--emerald-green);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--gold-yellow);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .about-section {
+            padding: 100px 0;
+        }
+
+        .history-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--emerald-green);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--gold-yellow);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--emerald-green);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--emerald-green);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--emerald-green);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--emerald-green) transparent transparent;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--gold-yellow);
+            background-color: var(--emerald-green);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .values-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(4, 99, 7, 0.9), rgba(4, 99, 7, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .value-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 10px;
+            height: 100%;
+            border-bottom: 3px solid var(--gold-yellow);
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--gold-yellow);
+            margin-bottom: 20px;
+        }
+
+        .value-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .team-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            color: var(--emerald-green);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .team-position {
+            color: var(--accent-red);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            margin-top: 15px;
+        }
+
+        .team-social a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: var(--light-green);
+            color: var(--emerald-green);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .team-social a:hover {
+            background-color: var(--emerald-green);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--gold-yellow);
+        }
+
+        .footer-links h5 {
+            color: var(--gold-yellow);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-yellow);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-yellow);
+            color: var(--emerald-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .left::before,
+            .right::before {
+                left: 60px;
+                border: medium solid var(--emerald-green);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--emerald-green) transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .team-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AVNEI<span>YAQAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline ms-lg-3">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Our Story</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title">Who We Are</h2>
+                    <p class="lead">AVNEI YAQAR is a premier multi-service company committed to delivering excellence
+                        across diverse industries.</p>
+                    <p>Founded with a vision to provide exceptional quality products and services, AVNEI YAQAR has grown
+                        from humble beginnings to become a trusted name in Zimbabwe's business landscape. Our name,
+                        meaning "Precious Stones" in Hebrew, reflects our commitment to being a valuable and enduring
+                        partner to our clients.</p>
+                    <p>What began as a small grocery supplier has evolved into a diversified enterprise offering premium
+                        groceries, catering services, corporate gifts, IT solutions, and construction materials. This
+                        expansion was driven by our customers' needs and our passion for excellence in every endeavor.
+                    </p>
+                    <div class="mt-4">
+                        <a href="services.html" class="btn btn-primary me-2">Our Services</a>
+                        <a href="contact.html" class="btn btn-outline-primary">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="ratio ratio-16x9">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="AVNEI YAQAR Team" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Our Journey</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Milestones in our growth and development
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2005</div>
+                        <h3>Foundation</h3>
+                        <p>AVNEI YAQAR was established as a small grocery supplier in Harare, focusing on premium
+                            imported goods for the local market.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2009</div>
+                        <h3>First Expansion</h3>
+                        <p>Added catering services to our offerings after recognizing the need for high-quality event
+                            catering in the corporate sector.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <h3>Bulawayo Branch</h3>
+                        <p>Opened our second location in Bulawayo to serve the growing demand in the southern region of
+                            Zimbabwe.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Corporate Gifts Division</h3>
+                        <p>Launched our corporate gifts service to help businesses strengthen relationships with premium
+                            gift solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>IT Solutions</h3>
+                        <p>Expanded into IT equipment and networking solutions to meet the technological needs of our
+                            corporate clients.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="500">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>Construction Materials</h3>
+                        <p>Added construction materials and fencing services, completing our transformation into a
+                            full-service business solutions provider.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title text-center" style="color: white;" data-aos="fade-up">Our Core Values</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">The principles that guide everything we
+                do</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4 class="value-title">Quality</h4>
+                        <p>We never compromise on quality. Every product and service must meet our exacting standards
+                            before reaching our customers.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4 class="value-title">Integrity</h4>
+                        <p>We conduct business with honesty and transparency, building trust through ethical practices
+                            and fair dealings.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="value-title">Innovation</h4>
+                        <p>We continuously seek better ways to serve our customers, embracing new ideas and technologies
+                            to improve our offerings.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="value-title">Community</h4>
+                        <p>We're committed to giving back and supporting the communities where we operate through
+                            various initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Meet Our Leadership</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">The dedicated professionals driving our
+                success</p>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                            class="team-img" alt="CEO">
+                        <div class="team-body">
+                            <h4 class="team-name">David Cohen</h4>
+                            <p class="team-position">Founder & CEO</p>
+                            <p>With over 25 years of business experience, David leads AVNEI YAQAR with vision and
+                                passion.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                            class="team-img" alt="Operations Director">
+                        <div class="team-body">
+                            <h4 class="team-name">Sarah Goldberg</h4>
+                            <p class="team-position">Operations Director</p>
+                            <p>Sarah ensures all our divisions run smoothly and efficiently, maintaining our high
+                                standards.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                            class="team-img" alt="Finance Director">
+                        <div class="team-body">
+                            <h4 class="team-name">Michael Levy</h4>
+                            <p class="team-position">Finance Director</p>
+                            <p>Michael manages our financial strategy and ensures sustainable growth across all
+                                divisions.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                            class="team-img" alt="Sales Director">
+                        <div class="team-body">
+                            <h4 class="team-name">Rachel Stein</h4>
+                            <p class="team-position">Sales Director</p>
+                            <p>Rachel leads our sales team and develops strategies to serve our clients better.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center py-5" data-aos="fade-up">
+            <h2 class="mb-4">Ready to Experience the AVNEI YAQAR Difference?</h2>
+            <p class="lead mb-5">Contact us today to discuss how we can meet your needs with our premium products and
+                services.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg me-3">Get in Touch</a>
+            <a href="services.html" class="btn btn-outline-dark btn-lg">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">AVNEI<span>YAQAR</span></div>
+                    <p>Where Quality Meets Excellence in every product and service we offer.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="services.html">Groceries</a></li>
+                            <li><a href="services.html">Catering</a></li>
+                            <li><a href="services.html">Corporate Gifts</a></li>
+                            <li><a href="services.html">IT Equipment</a></li>
+                            <li><a href="services.html">Construction</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Harare: 144 Hoveton Close</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bulawayo: 70 Woodville Park</li>
+                            <li><i class="fas fa-phone me-2"></i> +263 242 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@avneiyaqar.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM - 5PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 AVNEI YAQAR. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+
+</html>

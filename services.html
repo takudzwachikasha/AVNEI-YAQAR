@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | AVNEI YAQAR - Where Quality Meets Excellence</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --emerald-green: #046307;
+            --dark-green: #034a05;
+            --light-green: #e8f5e9;
+            --gold-yellow: #ffd700;
+            --accent-red: #c1272d;
+            --dark-red: #8a1c1c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--emerald-green) !important;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+
+        .navbar-brand span {
+            color: var(--gold-yellow);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-yellow) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            border-color: var(--accent-red);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            border-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--emerald-green);
+        }
+
+        .page-header {
+            position: relative;
+            color: white;
+            padding: 120px 0;
+            background: linear-gradient(rgba(4, 99, 7, 0.8), rgba(4, 99, 7, 0.8)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            justify-content: center;
+        }
+
+        .breadcrumb-item a {
+            color: var(--gold-yellow);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: white;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--emerald-green);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--gold-yellow);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .service-detail-section {
+            padding: 100px 0;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-bottom: 3px solid var(--emerald-green);
+            margin-bottom: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .service-body {
+            padding: 30px;
+        }
+
+        .service-title {
+            color: var(--emerald-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .branches-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .branch-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .branch-title {
+            color: var(--emerald-green);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .branch-icon {
+            font-size: 1.5rem;
+            color: var(--gold-yellow);
+            margin-right: 15px;
+        }
+
+        .branch-info {
+            margin-bottom: 15px;
+        }
+
+        .branch-info i {
+            color: var(--accent-red);
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .faq-section {
+            padding: 100px 0;
+        }
+
+        .accordion-button {
+            font-weight: 600;
+            color: var(--emerald-green);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--light-green);
+            color: var(--emerald-green);
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--gold-yellow);
+        }
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--gold-yellow);
+        }
+
+        .footer-links h5 {
+            color: var(--gold-yellow);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-yellow);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--gold-yellow);
+            color: var(--emerald-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">AVNEI<span>YAQAR</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline ms-lg-3">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Our Services</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="service-detail-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-up">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            class="service-img" alt="Groceries and Provisions">
+                        <div class="service-body">
+                            <h3 class="service-title">Groceries and Provisions</h3>
+                            <p>AVNEI YAQAR offers a premium selection of groceries and household provisions sourced from
+                                the finest suppliers worldwide. Our commitment to quality ensures that every product
+                                meets the highest standards.</p>
+                            <ul class="mb-4">
+                                <li>Premium quality imported and local products</li>
+                                <li>Wide variety of fresh produce</li>
+                                <li>Specialty and organic items</li>
+                                <li>Bulk purchasing options</li>
+                                <li>Corporate and institutional supply</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary">Inquire Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            class="service-img" alt="Catering Services">
+                        <div class="service-body">
+                            <h3 class="service-title">Catering Services</h3>
+                            <p>Our professional catering service transforms events into memorable experiences with
+                                exquisite cuisine and impeccable service tailored to your specific needs.</p>
+                            <ul class="mb-4">
+                                <li>Corporate events and meetings</li>
+                                <li>Weddings and social gatherings</li>
+                                <li>Custom menu planning</li>
+                                <li>Full-service event coordination</li>
+                                <li>Kosher and special diet options</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary">Plan Your Event</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            class="service-img" alt="Corporate Gifts">
+                        <div class="service-body">
+                            <h3 class="service-title">Corporate Gifts</h3>
+                            <p>Make lasting impressions with our premium corporate gift solutions. We help businesses
+                                strengthen relationships with elegant, memorable gifts for clients and employees.</p>
+                            <ul class="mb-4">
+                                <li>Custom branded gift baskets</li>
+                                <li>Luxury food and beverage selections</li>
+                                <li>Executive gift sets</li>
+                                <li>Seasonal corporate gifts</li>
+                                <li>Bulk ordering with custom packaging</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary">View Gift Options</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            class="service-img" alt="IT Equipment">
+                        <div class="service-body">
+                            <h3 class="service-title">IT Equipment</h3>
+                            <p>We provide high-performance computers, printers, and networking equipment to meet the
+                                technological needs of modern businesses.</p>
+                            <ul class="mb-4">
+                                <li>Business computers and workstations</li>
+                                <li>High-volume printers and copiers</li>
+                                <li>Networking and server equipment</li>
+                                <li>IT infrastructure solutions</li>
+                                <li>Ongoing support and maintenance</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary">Explore IT Solutions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            class="service-img" alt="Construction Materials">
+                        <div class="service-body">
+                            <h3 class="service-title">Construction Materials & Fencing Services</h3>
+                            <p>AVNEI YAQAR supplies premium construction materials and provides professional fencing
+                                services for residential, commercial, and industrial projects.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="mt-4">Construction Materials:</h5>
+                                    <ul>
+                                        <li>Quality building supplies</li>
+                                        <li>Concrete and masonry products</li>
+                                        <li>Roofing materials</li>
+                                        <li>Plumbing and electrical supplies</li>
+                                        <li>Project bulk purchasing</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="mt-4">Fencing Services:</h5>
+                                    <ul>
+                                        <li>Security fencing solutions</li>
+                                        <li>Decorative fencing</li>
+                                        <li>Industrial fencing</li>
+                                        <li>Custom design and installation</li>
+                                        <li>Maintenance and repairs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="contact.html" class="btn btn-primary mt-3">Request Materials List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section class="branches-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Our Branches</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Visit us at one of our convenient
+                locations</p>
+
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="branch-card">
+                        <h3 class="branch-title"><i class="fas fa-map-marker-alt branch-icon"></i> Harare Branch</h3>
+                        <div class="branch-info">
+                            <p><i class="fas fa-map-marker-alt"></i> 144 Hoveton Close, The Grange, Harare</p>
+                            <p><i class="fas fa-phone"></i> +263 242 123 4567</p>
+                            <p><i class="fas fa-envelope"></i> harare@avneiyaqar.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary">View on Map</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="branch-card">
+                        <h3 class="branch-title"><i class="fas fa-map-marker-alt branch-icon"></i> Bulawayo Branch</h3>
+                        <div class="branch-info">
+                            <p><i class="fas fa-map-marker-alt"></i> 70 Woodville Park, Bulawayo</p>
+                            <p><i class="fas fa-phone"></i> +263 292 123 4567</p>
+                            <p><i class="fas fa-envelope"></i> bulawayo@avneiyaqar.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM<br>Sat: 9:00 AM - 1:00 PM</p>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-primary">View on Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+            <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Find answers to common questions about
+                our services</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What areas do you serve with your catering services?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide catering services throughout Harare, Bulawayo, and surrounding areas. For
+                                    events beyond these regions, please contact us to discuss arrangements and any
+                                    additional travel fees that may apply.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Do you offer delivery for groceries and provisions?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer delivery services for all our grocery and provision orders. Delivery
+                                    fees vary based on location and order size. We provide free delivery for orders
+                                    above a certain value within specific areas. Contact our branches for current
+                                    delivery policies and fees.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Can I customize corporate gift packages?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! We specialize in creating customized corporate gift packages tailored to
+                                    your brand and budget. Our team will work with you to select appropriate items,
+                                    design packaging, and even include your company branding. We recommend contacting us
+                                    at least 2-3 weeks before you need the gifts to allow for customization and
+                                    preparation time.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What brands of IT equipment do you carry?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We carry leading international brands including HP, Dell, Lenovo, Cisco, and more.
+                                    Our inventory includes business-grade equipment suitable for corporate environments.
+                                    If you're looking for specific models or configurations, please contact our IT
+                                    department with your requirements and we'll provide options that meet your needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3" data-aos="fade-up" data-aos-delay="600">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Do you provide installation for fencing services?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, our fencing services include professional installation by experienced
+                                    technicians. We handle everything from site assessment and planning to material
+                                    delivery and installation. We offer various types of fencing including security
+                                    fencing, decorative fencing, and specialized industrial solutions. Contact us for a
+                                    free consultation and quote.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center py-5" data-aos="fade-up">
+            <h2 class="mb-4">Have More Questions About Our Services?</h2>
+            <p class="lead mb-5">Our team is ready to assist you with any inquiries or special requests.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg me-3">Contact Us</a>
+            <a href="tel:+2632421234567" class="btn btn-outline-dark btn-lg">Call Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-logo">AVNEI<span>YAQAR</span></div>
+                    <p>Where Quality Meets Excellence in every product and service we offer.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#">Groceries</a></li>
+                            <li><a href="#">Catering</a></li>
+                            <li><a href="#">Corporate Gifts</a></li>
+                            <li><a href="#">IT Equipment</a></li>
+                            <li><a href="#">Construction</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer-links">
+                        <h5>Contact Us</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Harare: 144 Hoveton Close</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bulawayo: 70 Woodville Park</li>
+                            <li><i class="fas fa-phone me-2"></i> +263 242 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@avneiyaqar.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Mon-Fri: 8AM - 5PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 AVNEI YAQAR. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+
+</html>
